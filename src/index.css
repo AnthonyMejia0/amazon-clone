@@ -4,7 +4,11 @@
 
 @layer components {
     .header-option {
-        @apply flex flex-col mx-[10px] text-white
+        @apply flex flex-col items-start mx-[10px] text-white
+    }
+
+    .header-option-2 {
+        @apply hidden md:flex md:flex-col items-start mx-[10px] text-white
     }
 
     .first-line {
@@ -22,7 +26,7 @@ body {
 
 .mask {
     z-index: -10;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 .b-color {
