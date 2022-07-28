@@ -15,3 +15,16 @@
         @apply text-[13px] font-[800]
     }
 }
+
+body {
+    background-color: rgb(234, 237, 237);
+}
+
+.mask {
+    z-index: -10;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
+}
+
+.b-color {
+    border-color: #a88734 #9c7e31 #846a29;
+}
