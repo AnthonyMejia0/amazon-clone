@@ -4,7 +4,7 @@ import CartItem from "./CartItem";
 import Subtotal from "./Subtotal";
 
 function Checkout() {
-  const [cart, setCart] = useRecoilState(cartState);
+  const [cart] = useRecoilState(cartState);
 
   return (
     <div className="flex p-[20px] bg-white h-[max-content]">
