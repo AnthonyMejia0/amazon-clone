@@ -1,12 +1,17 @@
 import CurrencyFormat from "react-currency-format";
+import { useRecoilValue } from "recoil";
+import { cartState, cartTotalState } from "../atoms/cartAtom";
 
 function Subtotal() {
+    const cart = useRecoilValue(cartState);
+    const total = useRecoilValue(cartTotalState);
+    
   return (
     <div className="flex flex-col justify-between w-[300px] h-[130px] p-[20px] bg-[#f3f3f3] border border-[#dddddd] rounded-[3px]">
         <CurrencyFormat 
             renderText={(value: string) => (
                 <>
-                    <p>Subtotal (0 items): <strong>0</strong></p>
+                    <p>{`Subtotal (${cart.length} ${cart.length === 1 ? "item" : "items"}):`} <strong>{value}</strong></p>
                     <small className="flex items-center">
                         <input className="mr-[5px]" type="checkbox" />
                         This order contains a gift
@@ -14,7 +19,7 @@ function Subtotal() {
                 </>
             )}
             decimalScale={2}
-            value={0}
+            value={total}
             displayType={"text"}
             thousandSeparator={true}
             prefix={"$"}
