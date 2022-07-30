@@ -22,10 +22,12 @@ function Header() {
       </button>
 
       <div className="flex items-center justify-center">
-        <button className="header-option">
-          <span className="first-line">Hello Guest</span>
-          <span className="second-line">Sign In</span>
-        </button>
+        <Link to="/login">
+          <button className="header-option">
+            <span className="first-line">Hello Guest</span>
+            <span className="second-line">Sign In</span>
+          </button>
+        </Link>
 
         <button className="header-option-2">
           <span className="first-line">Returns</span>
