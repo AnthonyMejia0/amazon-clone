@@ -1,7 +1,11 @@
 import { SearchIcon, ShoppingCartIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { cartState } from "../atoms/cartAtom";
 
 function Header() {
+  const cart = useRecoilValue(cartState);
+
   return (
     <div className='h-[60px] bg-[#131921] flex items-center sticky top-0 z-[100]'>
       <Link to='/'>
@@ -32,7 +36,7 @@ function Header() {
         <Link to='/checkout'>
           <button className='flex items-center text-white'>
             <ShoppingCartIcon className='h-5 w-5' />
-            <span className='second-line mx-[10px]'>0</span>
+            <span className='second-line mx-[10px]'>{cart.length}</span>
           </button>
         </Link>
       </div>
