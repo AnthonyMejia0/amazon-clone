@@ -1,5 +1,4 @@
 import Header from "./components/Header";
-import Home from "./components/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Checkout from "./components/Checkout";
 import Login from "./components/Login";
@@ -9,14 +8,13 @@ import { auth } from "./config/config";
 import { useSetRecoilState } from "recoil";
 import { userState } from "./atoms/userAtom";
 import CreateAccount from "./components/CreateAccount";
+import Home from "./components/Home";
 
 function App() {
   const setCurrentUser = useSetRecoilState(userState);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log("THE USER IS >>> ", user);
-
       if (user) {
         //User is logged in
         const userCopy = JSON.parse(JSON.stringify(user));
