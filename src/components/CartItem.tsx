@@ -31,7 +31,9 @@ function CartItem({ id, title, price, rating, img }: Props) {
       />
 
       <div className="pl-[20px]">
-        <p className="text-[17px] font-extrabold">{title}</p>
+        <p className="text-[11px] md:text-[15px] lg:text-[17px] font-extrabold line-clamp-6">
+          {title}
+        </p>
         <p className="flex items-center space-x-[1px]">
           <small>$</small>
           <strong>{price}</strong>
