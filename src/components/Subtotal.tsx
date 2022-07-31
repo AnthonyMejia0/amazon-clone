@@ -1,8 +1,10 @@
 import CurrencyFormat from "react-currency-format";
+import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { cartState, cartTotalState } from "../atoms/cartAtom";
 
 function Subtotal() {
+  const navigate = useNavigate();
   const cart = useRecoilValue(cartState);
   const total = useRecoilValue(cartTotalState);
 
@@ -30,7 +32,10 @@ function Subtotal() {
         prefix={"$"}
       />
 
-      <button className="bg-[#f0c14b] rounded-[2px] w-full h-[30px] border b-color mt-[10px] text-[#111]">
+      <button
+        onClick={() => navigate("/payment")}
+        className="bg-[#f0c14b] rounded-[2px] w-full h-[30px] border b-color mt-[10px] text-[#111]"
+      >
         Proceed to Checkout
       </button>
     </div>

@@ -9,6 +9,7 @@ import { useSetRecoilState } from "recoil";
 import { userState } from "./atoms/userAtom";
 import CreateAccount from "./components/CreateAccount";
 import Home from "./components/Home";
+import Payment from "./components/Payment";
 
 function App() {
   const setCurrentUser = useSetRecoilState(userState);
@@ -38,6 +39,16 @@ function App() {
             <div>
               <Header />
               <Checkout />
+            </div>
+          }
+        />
+
+        <Route
+          path="/payment"
+          element={
+            <div>
+              <Header />
+              <Payment />
             </div>
           }
         />
