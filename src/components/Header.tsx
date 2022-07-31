@@ -1,10 +1,23 @@
 import { SearchIcon, ShoppingCartIcon } from "@heroicons/react/solid";
+import { signOut, User } from "firebase/auth";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { cartState } from "../atoms/cartAtom";
+import { userState } from "../atoms/userAtom";
+import { auth } from "../config/config";
 
 function Header() {
   const cart = useRecoilValue(cartState);
+  const user = useRecoilValue(userState);
+  const userCopy: User = JSON.parse(JSON.stringify(user));
+
+  const handleAuthentication = () => {
+    if (user) {
+      signOut(auth)
+        .then(() => {})
+        .catch((error) => {});
+    }
+  };
 
   return (
     <div className="h-[60px] bg-[#131921] flex items-center sticky top-0 z-[100]">
@@ -22,10 +35,12 @@ function Header() {
       </button>
 
       <div className="flex items-center justify-center">
-        <Link to="/login">
+        <Link onClick={handleAuthentication} to={!user && "/login"}>
           <button className="header-option">
-            <span className="first-line">Hello Guest</span>
-            <span className="second-line">Sign In</span>
+            <span className="first-line">
+              {!user ? "Hello Guest" : `Hello ${userCopy.displayName}`}
+            </span>
+            <span className="second-line">{user ? "Sign Out" : "Sign In"}</span>
           </button>
         </Link>
 
