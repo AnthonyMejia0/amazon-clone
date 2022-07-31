@@ -18,6 +18,14 @@
     .second-line {
         @apply text-[13px] font-[800]
     }
+
+    .pay-section {
+        @apply flex p-[20px] my-0 mx-[20px] border-b border-b-gray-300
+    }
+
+    .pay-title {
+        @apply flex-[0.2]
+    }
 }
 
 body {
