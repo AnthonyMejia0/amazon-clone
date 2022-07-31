@@ -1,25 +1,35 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../config/config";
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const signIn = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-  };
 
-  const register = (e: React.FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
+        //const user = userCredential.user;
+        navigate("/");
       })
       .catch((error) => alert(error.message));
   };
+
+  // const register = (e: React.FormEvent<HTMLButtonElement>) => {
+  //   e.preventDefault();
+
+  //   createUserWithEmailAndPassword(auth, email, password)
+  //     .then((userCredential) => {
+  //       //const user = userCredential.user;
+  //       //console.log(user);
+  //       navigate("/");
+  //     })
+  //     .catch((error) => alert(error.message));
+  // };
 
   return (
     <div className="flex flex-col items-center h-screen bg-white">
@@ -66,12 +76,11 @@ function Login() {
           Interest-Based Ads Notice.
         </p>
 
-        <button
-          onClick={register}
-          className="rounded-[2px] w-full h-[30px] mt-[10px] border border-gray-600"
-        >
-          Create your Amazon Account
-        </button>
+        <Link to="/createAccount">
+          <button className="rounded-[2px] w-full h-[30px] mt-[10px] border border-gray-600">
+            Create your Amazon Account
+          </button>
+        </Link>
       </div>
     </div>
   );
