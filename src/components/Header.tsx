@@ -38,7 +38,7 @@ function Header() {
         <Link onClick={handleAuthentication} to={!user && "/login"}>
           <button className="header-option">
             <span className="first-line">
-              {!user ? "Hello Guest" : `Hello ${userCopy.displayName}`}
+              {!user ? "Hello, Guest" : `Hello, ${userCopy.displayName}`}
             </span>
             <span className="second-line">{user ? "Sign Out" : "Sign In"}</span>
           </button>

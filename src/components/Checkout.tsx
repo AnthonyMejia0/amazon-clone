@@ -15,7 +15,7 @@ function Checkout() {
           alt="Sample"
         />
         <div>
-          <h2 className="mr-[10px] p-[10px] border-b border-b-gray-400">
+          <h2 className="mr-[10px] p-[10px] border-b border-b-gray-400 text-4xl font-bold">
             Your Shopping Cart
           </h2>
         </div>
