@@ -1,5 +1,9 @@
 import { ChevronRightIcon } from "@heroicons/react/solid";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../config/config";
@@ -12,17 +16,18 @@ function CreateAccount() {
 
   const register = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    const firstName = name.split(" ")[0];
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
 
         updateProfile(user, {
-          displayName: firstName,
+          displayName: name,
+        }).then(() => {
+          signOut(auth)
+            .then(() => navigate("/login"))
+            .catch((error) => {});
         });
-
-        navigate("/");
       })
       .catch((error) => alert(error.message));
   };
@@ -48,6 +53,7 @@ function CreateAccount() {
             placeholder="First and last name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            autoFocus
           />
 
           <h5 className="mb-[5px]">E-Mail</h5>
