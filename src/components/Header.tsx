@@ -38,16 +38,22 @@ function Header() {
         <Link onClick={handleAuthentication} to={!user && "/login"}>
           <button className="header-option">
             <span className="first-line">
-              {!user ? "Hello, Guest" : `Hello, ${userCopy.displayName}`}
+              {!user
+                ? "Hello, Guest"
+                : `Hello, ${userCopy?.displayName?.split(" ")[0]}`}
             </span>
-            <span className="second-line">{user ? "Sign Out" : "Sign In"}</span>
+            <span className="second-line">
+              {userCopy ? "Sign Out" : "Sign In"}
+            </span>
           </button>
         </Link>
 
-        <button className="header-option-2">
-          <span className="first-line">Returns</span>
-          <span className="second-line">& Orders</span>
-        </button>
+        <Link to="/orders">
+          <button className="header-option-2">
+            <span className="first-line">Returns</span>
+            <span className="second-line">& Orders</span>
+          </button>
+        </Link>
 
         <button className="header-option-2">
           <span className="first-line">Your</span>
