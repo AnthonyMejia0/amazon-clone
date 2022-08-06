@@ -16,7 +16,7 @@ export const cartTotalState = selector({
   key: "cartTotalState",
   get: ({ get }) => {
     const cart = get(cartState);
-    let sum = 0;
+    let sum: number = 0;
 
     cart.forEach((item) => {
       sum += item.price;
