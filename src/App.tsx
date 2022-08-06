@@ -10,6 +10,13 @@ import { userState } from "./atoms/userAtom";
 import CreateAccount from "./components/CreateAccount";
 import Home from "./components/Home";
 import Payment from "./components/Payment";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import Orders from "./components/Orders";
+
+const stripePromise = loadStripe(
+  "pk_test_51LRpr9GigE2Uaq02uDKiAQW58OKpH8mmqFEfd750fWZGqCGx42qS62r3gWpaOG6tTCy9tR9bnVRgkqE2umXyPJKb00fa09dFR7"
+);
 
 function App() {
   const setCurrentUser = useSetRecoilState(userState);
@@ -30,6 +37,16 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route
+          path="/orders"
+          element={
+            <div>
+              <Header />
+              <Orders />
+            </div>
+          }
+        />
+
         <Route path="/createAccount" element={<CreateAccount />} />
         <Route path="/login" element={<Login />} />
 
@@ -48,7 +65,9 @@ function App() {
           element={
             <div>
               <Header />
-              <Payment />
+              <Elements stripe={stripePromise}>
+                <Payment />
+              </Elements>
             </div>
           }
         />
