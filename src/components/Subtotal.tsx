@@ -34,7 +34,10 @@ function Subtotal() {
 
       <button
         onClick={() => navigate("/payment")}
-        className="bg-[#f0c14b] rounded-[2px] w-full h-[30px] border b-color mt-[10px] text-[#111]"
+        disabled={!cart.length}
+        className={`${
+          !cart.length ? "bg-[#f3f3f3]" : "bg-[#f0c14b]"
+        } rounded-[2px] w-full h-[30px] border b-color mt-[10px] text-[#111]`}
       >
         Proceed to Checkout
       </button>
