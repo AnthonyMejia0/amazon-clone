@@ -13,23 +13,10 @@ function Login() {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        //const user = userCredential.user;
         navigate("/");
       })
       .catch((error) => alert(error.message));
   };
-
-  // const register = (e: React.FormEvent<HTMLButtonElement>) => {
-  //   e.preventDefault();
-
-  //   createUserWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       //const user = userCredential.user;
-  //       //console.log(user);
-  //       navigate("/");
-  //     })
-  //     .catch((error) => alert(error.message));
-  // };
 
   return (
     <div className="flex flex-col items-center h-screen bg-white">

@@ -52,8 +52,7 @@ function Home() {
 
         <div className="flex z-[1] mx-[5px]">
           <Product
-            title="
-                  RitFit Garage & Home Gym Package Includes Optional 1000LBS Power Cage with LAT Pull Down,Weight Bench, Barbell Set with Olympic Barbell"
+            title="RitFit Garage & Home Gym Package Includes Optional 1000LBS Power Cage with LAT Pull Down,Weight Bench, Barbell Set with Olympic Barbell"
             price={1299.99}
             rating={4}
             img="https://i.imgur.com/OJXh6mW.jpg"
