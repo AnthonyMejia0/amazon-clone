@@ -7,9 +7,10 @@ type Props = {
   price: number;
   rating: number;
   img: string;
+  buttonDisabled?: boolean;
 };
 
-function CartItem({ id, title, price, rating, img }: Props) {
+function CartItem({ id, title, price, rating, img, buttonDisabled }: Props) {
   const [cart, setCart] = useRecoilState(cartState);
 
   const removeFromCheckout = () => {
@@ -47,12 +48,14 @@ function CartItem({ id, title, price, rating, img }: Props) {
             ))}
         </div>
 
-        <button
-          onClick={removeFromCheckout}
-          className="bg-[#f0c14b] border b-color text-[#111] mt-[10px] px-1 rounded-sm"
-        >
-          Remove from cart
-        </button>
+        {!buttonDisabled && (
+          <button
+            onClick={removeFromCheckout}
+            className="bg-[#f0c14b] border b-color text-[#111] mt-[10px] px-1 rounded-sm"
+          >
+            Remove from cart
+          </button>
+        )}
       </div>
     </div>
   );
