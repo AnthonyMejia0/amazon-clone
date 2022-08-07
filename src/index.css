@@ -23,6 +23,10 @@
         @apply flex p-[20px] my-0 mx-[20px] border-b border-b-gray-300
     }
 
+    .pay-section-2 {
+        @apply flex flex-col md:flex-row p-[20px] my-0 mx-[20px] border-b border-b-gray-300
+    }
+
     .pay-title {
         @apply flex-[0.2]
     }
