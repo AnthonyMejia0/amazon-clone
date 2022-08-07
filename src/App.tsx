@@ -75,7 +75,7 @@ function App() {
         <Route
           path="/"
           element={
-            <div>
+            <div className="app">
               <Header />
               <Home />
             </div>

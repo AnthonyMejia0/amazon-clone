@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+    .app {
+        @apply w-screen overflow-x-hidden
+    }
+
     .header-option {
         @apply flex flex-col items-start mx-[10px] text-white
     }
@@ -29,6 +33,10 @@
 
     .pay-title {
         @apply flex-[0.2]
+    }
+
+    .image-height {
+        @apply min-h-[95px] max-h-[95px] md:max-h-[125px] md:min-h-[125px] xl:max-h-[150px] xl:min-h-[150px]
     }
 }
 
