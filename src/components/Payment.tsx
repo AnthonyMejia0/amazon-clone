@@ -46,7 +46,7 @@ function Payment() {
     getClientSecret();
   }, [cart, total]);
 
-  console.log("The secret is >>>", clientSecret);
+  //console.log("The secret is >>>", clientSecret);
 
   const handleChange = (e: any) => {
     setDisabled(e.empty || cart.length === 0);
@@ -115,16 +115,16 @@ function Payment() {
           <div className="pay-title">
             <h3 className="text-lg font-extrabold">Delivery Address</h3>
           </div>
-          <div className="flex-[0.8]">
+          <div className="flex-[0.8] px-10 md:px-0">
             <p>{user?.displayName}</p>
             <p>123 React Lane</p>
             <p>Los Angeles, CA</p>
           </div>
         </div>
 
-        <div className="pay-section">
+        <div className="pay-section-2">
           <div className="pay-title">
-            <h3 className="text-lg font-extrabold">
+            <h3 className="text-lg pb-5 md:pb-0 font-extrabold">
               Review items and delivery
             </h3>
           </div>
@@ -142,13 +142,16 @@ function Payment() {
           </div>
         </div>
 
-        <div className="pay-section">
+        <div className="pay-section-2">
           <div className="pay-title">
             <h3 className="text-lg font-extrabold">Payment Method</h3>
           </div>
           <div className="flex-[0.8]">
             <form onSubmit={handleSubmit} className="max-w-[500px]">
-              <CardElement onChange={handleChange} />
+              <CardElement
+                onChange={handleChange}
+                className="py-3 md:pt-0 md:pb-3"
+              />
 
               <div>
                 <CurrencyFormat

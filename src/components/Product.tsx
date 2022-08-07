@@ -24,7 +24,7 @@ function Product({ title, price, rating, img }: Props) {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-end m-[10px] p-[20px] w-full max-h-[400px] min-w-[100px] bg-white z-[1] hover:scale-[1.01] hover:shadow-xl">
+    <div className="relative flex flex-col items-center justify-end m-[10px] p-[20px] w-full max-h-[400px] min-w-[100px] bg-white z-[1] hover:scale-[1.01] hover:shadow-xl rounded-lg">
       <div className="h-[100px] mb-[25px]">
         <p className="line-clamp-3">{title}</p>
         <p className="mt-[5px]">

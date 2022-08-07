@@ -7,7 +7,7 @@ function Checkout() {
   const [cart] = useRecoilState(cartState);
 
   return (
-    <div className="flex p-[20px] bg-white h-[max-content]">
+    <div className="flex flex-col lg:flex-row p-[20px] bg-white h-[max-content]">
       <div>
         <img
           className="w-full mb-[10px]"

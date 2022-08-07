@@ -49,7 +49,7 @@ function Header() {
         </Link>
 
         <Link to="/orders">
-          <button className="header-option-2">
+          <button className="header-option">
             <span className="first-line">Returns</span>
             <span className="second-line">& Orders</span>
           </button>

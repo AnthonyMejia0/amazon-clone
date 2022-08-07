@@ -27,7 +27,7 @@ function Orders() {
   }, [user]);
 
   return (
-    <div className="py-[20px] px-[80px]">
+    <div className="py-[20px] px-5 md:px-[80px]">
       <h1 className="text-4xl font-extrabold">Your Orders</h1>
 
       <div className="my-[30px]">
