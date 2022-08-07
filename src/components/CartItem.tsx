@@ -26,13 +26,13 @@ function CartItem({ id, title, price, rating, img, buttonDisabled }: Props) {
   return (
     <div className="flex my-[20px]">
       <img
-        className="h-[180px] w-[180px] object-contain"
+        className="h-[180px] min-w-[180px] max-w-[180px] object-contain"
         src={img}
         alt="Cart item"
       />
 
       <div className="pl-[20px]">
-        <p className="text-[11px] md:text-[15px] lg:text-[17px] font-extrabold line-clamp-6">
+        <p className="text-[13px] md:text-[15px] lg:text-[17px] font-extrabold line-clamp-6">
           {title}
         </p>
         <p className="flex items-center space-x-[1px]">
