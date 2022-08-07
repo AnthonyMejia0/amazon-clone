@@ -6,13 +6,13 @@ function Home() {
       <div>
         <div>
           <img
-            className="w-full z-[-1] mb-[-150px] mask"
+            className="w-full z-[-1] mb-[-150px] lg:mb-[-200px] 2xl:mb-[-250px] mask"
             src="https://i.imgur.com/WERPlqW.jpg"
             alt="Banner"
           />
         </div>
 
-        <div className="mt-20 md:mt-0">
+        <div className="pt-20 md:pt-0">
           <div className="flex z-[1] mx-[5px]">
             <Product
               title="Sony Playstation 5 Console"
